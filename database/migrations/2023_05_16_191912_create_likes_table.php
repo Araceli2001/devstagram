@@ -15,6 +15,9 @@ return new class extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
             //necesitamos el user id del k me dda me gusta
+            //foreignIdforeignId es una clave foranea buscame en otra tabla el user_id
+            //constrained
+            //cascade elimmina en forma de casacada (noaccion = no hacee nada)
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //el post del k se esta danndo like
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
